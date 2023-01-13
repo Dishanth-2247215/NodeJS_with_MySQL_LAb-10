@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.3/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-route/1.8.3/angular-route.min.js" integrity="sha512-y1qD3hz/IAf8W4+/UMLZ+CN6LIoUGi7srWJ3r1R17Hid8x0yXe+1B5ZelkaL1Mjzedzu0Cg3HBvDG02SAgSzBw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="app.js"></script>
+    <link rel="stylesheet" href="style.css">
+   
+</head>
+
+<header class="bar">
+    <div class="box1">
+        
+                <img src="companylogo.jpg" width="79px" height="79px" style="border-radius:7px;">
+                <label>Dream Interiors</label>
+            
+    </div>
+
+    <div class="box2">
+        <span><input type="search" placeholder="Search..."></span>
+        <span class="menu">
+            <a href="#/view">View</a>
+            <a href="#/create">Create</a>
+            <a href="#/update">Update</a>
+            <a href="#/search">Search</a>
+            <a href="#/delete">Delete</a>
+        </span>
+    </div>
+</header>
+<br>
+
+
+           
+
+<body>
+
+    <ng-view></ng-view>
+   
+    
+</body>
+
+</html>

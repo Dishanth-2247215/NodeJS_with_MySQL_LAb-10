@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div>
+        <form ng-submit="getData()">
+        <div class="mb-3 mt-4">
+            <label for="delete" class="form-label">Select ID</label>
+            <input type="number" ng-model="status" id="" required ng-change="getData()">
+        </div>
+            <input type="submit" value="Search"/>
+        </form>
+        <section id="tableSection" class="container mt-5">
+            <table>
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Number</th>
+                    </tr>
+                    <tr ng-repeat="data in datas">
+                        <td scope="row">{{data.id}}</td>
+                        <td>{{data.name}}</td>
+                        <td>{{data.email}}</td>
+                        <td>{{data.number}}</td>
+                    </tr>
+                
+            </table>
+        </section>
+    </div>
+</body>
+
+</html>
