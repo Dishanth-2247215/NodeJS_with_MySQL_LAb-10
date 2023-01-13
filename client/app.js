@@ -70,6 +70,10 @@
                     templateUrl: 'update.html',
                     controller: 'updateCtrl'
                 })
+                .when('/search', {
+                    templateUrl: 'search.html',
+                    controller: 'searchCtrl'
+                })
                 .when('/delete', {
                     templateUrl: 'delete.html',
                     controller: 'deleteCtrl'

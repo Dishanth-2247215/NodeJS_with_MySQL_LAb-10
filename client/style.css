@@ -142,5 +142,31 @@ input[type="email"] {
     border-radius: 2px;
     font-size: 16px;
 }
-
-
+input[type="submit"] {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: blue ;
+    color:white;
+    width: 200px;
+    height: 5vh;
+    font-size: 20px;
+    border:none;
+    border-radius: 8px;
+}
+.createbody{
+    padding-left: 50px;
+}
+.deletebody{
+    padding-left: 50px;
+}
+.searchbody{
+    padding-left: 50px;
+}
+.updatebody{
+    padding-left: 50px;
+}
+.viewbody{
+    padding-left: 50px;
+}
+.form-label{
+    font-size: 25px;
+}

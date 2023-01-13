@@ -10,15 +10,17 @@
 </head>
 
 <body>
-  
+    <div class="deletebody">
         <form ng-submit="deleteEntry()">
                 <label for="delete" class="form-label">Select Name</label>
                 <select class="form-select form-select-lg" ng-model="del" required
-                    ng-options="data.id for data in datas">
+                    ng-options="data.id for data in datas"><br><br>
                     <option selected disabled value="">Select one</option>
                 </select>
+                <br><br>
                 <input type="submit" value="Delete" class="btn btn-danger">
         </form>
+    </div>
 </body>
 
 </html>

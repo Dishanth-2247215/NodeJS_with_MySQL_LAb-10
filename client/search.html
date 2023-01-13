@@ -11,13 +11,12 @@
 </head>
 
 <body>
-    <div>
+    <div class="searchbody">
         <form ng-submit="getData()">
-        <div class="mb-3 mt-4">
-            <label for="delete" class="form-label">Select ID</label>
+            <label for="delete" class="form-label">Select ID :</label><br>
             <input type="number" ng-model="status" id="" required ng-change="getData()">
-        </div>
-            <input type="submit" value="Search"/>
+        <br><br>
+            <input type="submit" value="Search"/><br><br><br>
         </form>
         <section id="tableSection" class="container mt-5">
             <table>
