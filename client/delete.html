@@ -14,7 +14,7 @@
         <h1 style="color: blue;">Delete User Data</h1><br><br>
         <form ng-submit="deleteEntry()">
                 <label for="delete" class="form-label">Select ID :</label><br>
-                <select class="form-select form-select-lg" ng-model="del.id" required
+                <select class="form-select form-select-lg" ng-model="id" id="" required
                     ng-options="data.id for data in datas"><br><br>
                     <option selected disabled value="">Select one</option>
                 </select>

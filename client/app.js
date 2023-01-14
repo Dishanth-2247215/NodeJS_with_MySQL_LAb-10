@@ -62,23 +62,6 @@
             };
         })
 
-        .controller('searchCtrl', function ($scope, $rootScope) {
-            $scope.getData = function () {
-                var searchJson = { status: $scope.status }
-                var jsonObj = JSON.stringify(searchJson)
-                fetch('http://localhost:3000/search', {
-                    method: "POST",
-                    body: jsonObj,
-                    headers: { "Content-type": "application/json; charset=UTF-8" }
-                })
-                .then(response => response.json())
-                .then(json => {
-                    console.log(json)
-                    $scope.datas = json
-                })
-                .catch(err => console.log(err))
-            };
-        })
 
 
 
@@ -87,13 +70,13 @@
                 $scope.datas = response.data
             })
             $scope.deleteEntry = function () {
-                var delJson = { id: $scope.del.id }
+                var delJson = { delid: $scope.id }
                 var jsonObj = JSON.stringify(delJson)
 
                 fetch('http://localhost:3000/delete', {
                     method: "POST",
                     body: jsonObj,
-                    headers: { "Content-type": "application/json; charset=UTF-8" }
+                    headers: { "Content-type": "application/json" }
                 })
                 .then(response => response.json())
                 .then(json => console.log(json))
@@ -123,7 +106,7 @@
                 })
                 .when('/search', {
                     templateUrl: 'search.html',
-                    controller: 'searchCtrl'
+                    controller: 'updateCtrl'
                 })
                 .when('/delete', {
                     templateUrl: 'delete.html',

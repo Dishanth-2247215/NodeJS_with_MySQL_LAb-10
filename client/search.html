@@ -11,31 +11,21 @@
 </head>
 
 <body>
-    <div class="searchbody">
+    <div class="updatebody">
         <h1 style="color: blue;">Search User Data</h1><br><br>
-        <form ng-submit="getData()">
-            <label for="delete" class="form-label">Select ID :</label><br>
-            <input type="number" ng-model="status" id="" required ng-change="getData()">
-        <br><br>
-            <input type="submit" value="Search"/><br><br><br>
+        <form ng-submit="updateEntry()">
+                <label for="id" class="form-label">Select Id :</label><br>
+                        <select ng-model="id" id="" required ng-options="data.id for data in datas" ng-change="getId()">
+                            <option selected disabled value="">Select one</option>
+                        </select><br><br>
+                        <label for="name" class="form-label">Name :</label><br>
+                        <input type="text" ng-model="name" required><br><br>
+                        <label for="orVal" class="form-label">Email :</label><br>
+                        <input type="email" ng-model="email"  required><br><br>
+                        <label for="number" class="form-label">Phone Number :</label><br>
+                        <input type="text" ng-model="number"  required><br><br>
+                <input type="submit" value="Clear"> 
         </form>
-        <section id="tableSection" class="container mt-5">
-            <table>
-                    <tr>
-                        <th>Id</th>
-                        <th>Name</th>
-                        <th>Email</th>
-                        <th>Number</th>
-                    </tr>
-                    <tr ng-repeat="data in datas">
-                        <td>{{data.id}}</td>
-                        <td>{{data.name}}</td>
-                        <td>{{data.email}}</td>
-                        <td>{{data.number}}</td>
-                    </tr>
-                
-            </table>
-        </section>
     </div>
 </body>
 

@@ -77,7 +77,7 @@ app.post('/search', (req, res) => {
     res.status(200)
     res.setHeader('Content-Type', 'application/json')
     var getStatus = req.body
-    connection.query("SELECT * from " + tbl + " where status = \'" + getStatus['status'] + "\'", function (err, result) {
+    connection.query("SELECT * from " + tbl + " where id = \'" + getStatus['status'] + "\'", function (err, result) {
         if (err) throw err;
         console.log("Result: " + JSON.stringify(result));
         res.end(JSON.stringify(result))
@@ -87,7 +87,7 @@ app.post('/search', (req, res) => {
 app.post('/delete', (req,res) => {
     res.status(200)
     res.setHeader('Content-Type', 'application/json')
-    var delId = req.body['delID']
+    var delId = req.body['delid']
 
     connection.query("DELETE from " + tbl + " where id = " + delId, function (err, result) {
         if (err) throw err;
