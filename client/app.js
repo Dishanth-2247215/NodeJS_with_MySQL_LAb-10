@@ -13,12 +13,11 @@
 
         .controller('createCtrl', function ($scope) {
             $scope.createEntry = function () {
-                var jsonObj = '{"id":'+$scope.id +'","name":"' + $scope.name +'","email":"' + $scope.email +'","number":' + $scope.number + '}'
-                console.log(jsonObj)
+                var newData = "{\"id\":\"" + $scope.id + "\", \"name\":\"" + $scope.name + "\", \"email\":\"" + $scope.email + "\", \"number\":\"" + $scope.number + "\"}";
 
                 fetch('http://localhost:3000/create', {
                     method: "POST",
-                    body: jsonObj,
+                    body: newData,
                     headers: { "Content-type": "application/json; charset=UTF-8" }
                 })
                 .then(response => response.json())
@@ -28,8 +27,60 @@
                 $scope.name=""
                 $scope.email=""
                 $scope.number=""
-            }
+            };
         })
+
+
+        .controller('updateCtrl', function ($scope, $http) {
+            $http.get('http://localhost:3000/').then(function (response) {
+                $scope.datas = response.data
+            })
+
+            $scope.getId = function () {
+                var selectedId = $scope.id
+                console.log(selectedId)
+                $scope.name = selectedId['name']
+                $scope.email = selectedId['email']
+                $scope.number = selectedId['number']
+            }
+
+            $scope.updateEntry = function () {
+                var newData = "{\"id\":\"" + $scope.id['id'] + "\", \"name\":\"" + $scope.name + "\", \"email\":\"" + $scope.email + "\", \"number\":\"" + $scope.number +  "\"}";
+
+                fetch('http://localhost:3000/update', {
+                    method: "POST",
+                    body: newData,
+                    headers: {"Content-type": "application/json; charset=UTF-8"}
+                })
+                .then(response => response.json()) 
+                .then(json => console.log(json))
+                .catch(err => console.log(err))
+                $scope.id=""
+                $scope.name=""
+                $scope.email=""
+                $scope.number=""
+            };
+        })
+
+        .controller('searchCtrl', function ($scope, $rootScope) {
+            $scope.getData = function () {
+                var searchJson = { status: $scope.status }
+                var jsonObj = JSON.stringify(searchJson)
+                fetch('http://localhost:3000/search', {
+                    method: "POST",
+                    body: jsonObj,
+                    headers: { "Content-type": "application/json; charset=UTF-8" }
+                })
+                .then(response => response.json())
+                .then(json => {
+                    console.log(json)
+                    $scope.datas = json
+                })
+                .catch(err => console.log(err))
+            };
+        })
+
+
 
         .controller('deleteCtrl', function ($scope, $http) {
             $http.get('http://localhost:3000/').then(function (response) {

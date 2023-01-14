@@ -10,18 +10,18 @@
 </head>
 
 <body>
-    <br> <br>
     <div class="updatebody">
+        <h1 style="color: blue;">Update User Data</h1><br><br>
         <form ng-submit="updateEntry()">
-                <label for="id" class="form-label">Id</label>
+                <label for="id" class="form-label">Id :</label><br>
                         <select ng-model="id" id="" required ng-options="data.id for data in datas" ng-change="getId()">
                             <option selected disabled value="">Select one</option>
                         </select><br><br>
-                        <label for="name" class="form-label">Name</label><br>
+                        <label for="name" class="form-label">Name :</label><br>
                         <input type="text" ng-model="name" required><br><br>
-                        <label for="orVal" class="form-label">Email</label><br>
+                        <label for="orVal" class="form-label">Email :</label><br>
                         <input type="email" ng-model="email"  required><br><br>
-                        <label for="number" class="form-label">Phone Number</label><br>
+                        <label for="number" class="form-label">Phone Number :</label><br>
                         <input type="text" ng-model="number"  required><br><br>
                 <input type="submit" value="Update"> 
         </form>

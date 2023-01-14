@@ -12,6 +12,7 @@
 
 <body>
     <div class="searchbody">
+        <h1 style="color: blue;">Search User Data</h1><br><br>
         <form ng-submit="getData()">
             <label for="delete" class="form-label">Select ID :</label><br>
             <input type="number" ng-model="status" id="" required ng-change="getData()">
@@ -27,7 +28,7 @@
                         <th>Number</th>
                     </tr>
                     <tr ng-repeat="data in datas">
-                        <td scope="row">{{data.id}}</td>
+                        <td>{{data.id}}</td>
                         <td>{{data.name}}</td>
                         <td>{{data.email}}</td>
                         <td>{{data.number}}</td>
