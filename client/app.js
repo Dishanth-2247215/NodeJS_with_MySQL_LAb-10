@@ -70,7 +70,7 @@
                 $scope.datas = response.data
             })
             $scope.deleteEntry = function () {
-                var delJson = { delid: $scope.id }
+                var delJson = { delid: $scope.id['id'] }
                 var jsonObj = JSON.stringify(delJson)
 
                 fetch('http://localhost:3000/delete', {
@@ -81,7 +81,7 @@
                 .then(response => response.json())
                 .then(json => console.log(json))
                 .catch(err => console.log(err))
-                $scope.del = ""
+                $scope.id = ""
             }
         })
 
